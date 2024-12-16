@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/touch.dart';
 
 class Area extends StatefulWidget {
   const Area({super.key});
@@ -158,17 +159,27 @@ class _AreaState extends State<Area> {
                       100,
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(left: 10),
-                    child: Text(
-                      "Home",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Color.fromRGBO(
-                          120,
-                          120,
-                          120,
-                          100,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Touch(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(left: 10),
+                      child: Text(
+                        "Home",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Color.fromRGBO(
+                            120,
+                            120,
+                            120,
+                            100,
+                          ),
                         ),
                       ),
                     ),
