@@ -149,7 +149,7 @@ class _SignInPageState extends State<SignInPage> {
                 child: Column(
                   children: [
                     Text(
-                      "Do not have any account yet? my name is sajivddin ansari",
+                      "Do not have any account yet?",
                       style: TextStyle(
                         color: Color.fromRGBO(233, 145, 82, .90),
                         fontSize: 16,
