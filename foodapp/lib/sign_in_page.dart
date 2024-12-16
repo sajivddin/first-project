@@ -5,7 +5,7 @@ class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignInPage> get createState => _SignInPageState();
 }
 
 class _SignInPageState extends State<SignInPage> {
@@ -149,7 +149,7 @@ class _SignInPageState extends State<SignInPage> {
                 child: Column(
                   children: [
                     Text(
-                      "Do not have any account yet?",
+                      "Do not have any account yet? my name is sajivddin ansari",
                       style: TextStyle(
                         color: Color.fromRGBO(233, 145, 82, .90),
                         fontSize: 16,

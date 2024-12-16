@@ -5,7 +5,7 @@ class Buynow extends StatefulWidget {
   const Buynow({super.key});
 
   @override
-  State<Buynow> createState() => _BuynowState();
+  State<Buynow> get createState => _BuynowState();
 }
 
 class _BuynowState extends State<Buynow> {
