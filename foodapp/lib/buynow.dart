@@ -305,19 +305,29 @@ class _BuynowState extends State<Buynow> {
               ),
               child: Stack(
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 260, top: 20),
-                    width: 80,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Buy Now",
-                        style: TextStyle(
-                          color: Color.fromRGBO(233, 145, 82, .90),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Loginscreen(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(left: 260, top: 20),
+                      width: 80,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Buy Now",
+                          style: TextStyle(
+                            color: Color.fromRGBO(233, 145, 82, .90),
+                          ),
                         ),
                       ),
                     ),
@@ -344,31 +354,21 @@ class _BuynowState extends State<Buynow> {
                       ],
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Loginscreen(),
-                        ),
-                      );
-                    },
-                    child: Container(
-                      margin: EdgeInsets.only(left: 160, top: 20),
-                      width: 80,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(
-                          color: Colors.white,
-                        ),
+                  Container(
+                    margin: EdgeInsets.only(left: 160, top: 20),
+                    width: 80,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        color: Colors.white,
                       ),
-                      child: Center(
-                        child: Text(
-                          "Add to cart",
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Add to cart",
+                        style: TextStyle(
+                          color: Colors.white,
                         ),
                       ),
                     ),

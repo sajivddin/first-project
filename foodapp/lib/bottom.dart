@@ -11,8 +11,6 @@ class Bottom extends StatefulWidget {
 class _BottomState extends State<Bottom> {
   bool isFavorite = false;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,81 +71,84 @@ class _BottomState extends State<Bottom> {
                 ),
               ],
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Cartscreen(),
-                  ),
-                );
-              },
-              child: Container(
-                margin: EdgeInsets.only(top: 22, left: 50),
-                width: 256,
-                height: 106,
-                decoration: BoxDecoration(
-                  // color: Color.fromRGBO(0, 0, 0, 100),
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(18),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 10, top: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Special Offer",
-                            style: TextStyle(color: Colors.white, fontSize: 16),
-                          ),
-                          Text(
-                            "for October",
-                            style: TextStyle(color: Colors.white, fontSize: 16),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 10),
-                            width: 65,
-                            height: 30,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Buy Now",
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 60),
-                      child: Image.asset("assets/image/chicka.png"),
-                    ),
-                  ],
-                ),
-              ),
-            ),
             Container(
-              margin: EdgeInsets.only(top: 75, left: 10),
+              margin: EdgeInsets.only(top: 22, left: 50),
+              width: 256,
+              height: 106,
+              decoration: BoxDecoration(
+                // color: Color.fromRGBO(0, 0, 0, 100),
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(18),
+              ),
               child: Row(
                 children: [
-                  Image.asset("assets/image/chicken1.png"),
                   Container(
-                    margin: EdgeInsets.only(left: 16),
-                    child: Image.asset("assets/image/chicken2.png"),
+                    margin: EdgeInsets.only(left: 10, top: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Special Offer",
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                        Text(
+                          "for October",
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          width: 65,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Buy Now",
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 16),
-                    child: Image.asset("assets/image/chicken3.png"),
+                    margin: EdgeInsets.only(left: 60),
+                    child: Image.asset("assets/image/chicka.png"),
                   ),
                 ],
               ),
             ),
+            Container(
+              margin: EdgeInsets.only(top: 75, left: 10),
+              child: Row(children: [
+                Container(
+                  child: Image.asset("assets/image/chicken1.png"),
+                ),
+              ],),
+            ),
+
+
+            // Container(
+            //   margin: EdgeInsets.only(top: 75, left: 10),
+            //   child: Row(
+            //     children: [
+            //       Image.asset("assets/image/chicken1.png"),
+            //       Container(
+            //         margin: EdgeInsets.only(left: 16),
+            //         child: Image.asset("assets/image/chicken2.png"),
+            //       ),
+            //       Container(
+            //         margin: EdgeInsets.only(left: 16),
+            //         child: Image.asset("assets/image/fish.png"),
+            //       ),
+            //     ],
+            //   ),
+            // ),
+
+
+
             Container(
               margin: EdgeInsets.only(top: 65, left: 10),
               child: Row(
@@ -173,53 +174,62 @@ class _BottomState extends State<Bottom> {
                 ],
               ),
             ),
-
-
-
             Row(
               children: [
-                Container(
-                  margin: EdgeInsets.only(top: 16, left: 10),
-                  child: Row(
-                    children: [
-                      Column(
-                        children: [
-                          Stack(
-                            children: [
-                              Image.asset("assets/image/sheapmeat.png"),
-                              Container(
-                                margin: EdgeInsets.only(left: 85),
-                                child: InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      isFavorite = !isFavorite;
-                                    });
-                                  },
-                                  child: Icon(
-                                    isFavorite
-                                        ? Icons.favorite
-                                        : Icons.favorite_border,
-                                    color:
-                                        isFavorite ? Colors.red : Colors.orange,
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Cartscreen(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: 16, left: 10),
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            Stack(
+                              children: [
+                                Image.asset("assets/image/sheapmeat.png"),
+                                Container(
+                                  margin: EdgeInsets.only(left: 85),
+                                  child: InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        isFavorite = !isFavorite;
+                                      });
+                                    },
+                                    child: Icon(
+                                      isFavorite
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color: isFavorite
+                                          ? Colors.red
+                                          : Colors.orange,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "Sheap Meat",
-                            style: TextStyle(color: Colors.black, fontSize: 16),
-                          ),
-                          Text(
-                            "Form ₹ 120.00",
-                            style: TextStyle(
-                                color: Color.fromRGBO(0, 0, 0, 60),
-                                fontSize: 16),
-                          ),
-                        ],
-                      ),
-                    ],
+                              ],
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "Sheap Meat",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 16),
+                            ),
+                            Text(
+                              "Form ₹ 120.00",
+                              style: TextStyle(
+                                  color: Color.fromRGBO(0, 0, 0, 60),
+                                  fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Spacer(),
@@ -269,476 +279,476 @@ class _BottomState extends State<Bottom> {
                 ),
               ],
             ),
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 16, left: 10),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/goatmutton.png"),
-                                Container(
-                                  margin: EdgeInsets.only(left: 85),
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 16, left: 10),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/goatmutton.png"),
+                              Container(
+                                margin: EdgeInsets.only(left: 85),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "goat Mutton Best",
-                              style: TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            Text(
-                              "Form ₹ 179.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Spacer(),
-                  Container(
-                    margin: EdgeInsets.only(top: 16, right: 10),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/whitechicken.png"),
-                                Container(
-                                  margin: EdgeInsets.only(left: 90),
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "White Chicken",
-                              style: TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            Text(
-                              "Form Rs.600.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 10, top: 30),
-                child: Text(
-                  "Handpicked for you",
-                  style: TextStyle(
-                    color: Color.fromRGBO(233, 145, 82, .90),
-                    fontSize: 16,
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "goat Mutton Best",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Text(
+                            "Form ₹ 179.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
+                Spacer(),
+                Container(
+                  margin: EdgeInsets.only(top: 16, right: 10),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/whitechicken.png"),
+                              Container(
+                                margin: EdgeInsets.only(left: 90),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "White Chicken",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Text(
+                            "Form Rs.600.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10, top: 30),
+              child: Text(
+                "Handpicked for you",
+                style: TextStyle(
+                  color: Color.fromRGBO(233, 145, 82, .90),
+                  fontSize: 16,
+                ),
               ),
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 16, left: 10),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/rawchicken.png"),
-                                Container(
-                                  margin: EdgeInsets.only(left: 100),
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
+            ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 16, left: 10),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/rawchicken.png"),
+                              Container(
+                                margin: EdgeInsets.only(left: 100),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "Raw Chicken",
-                              style: TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            Text(
-                              "Form ₹ 395.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Raw Chicken",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Text(
+                            "Form ₹ 395.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  Spacer(),
-                  Container(
-                    margin: EdgeInsets.only(top: 16, right: 6),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/muttomran.png"),
-                                Container(
-                                  margin: EdgeInsets.only(left: 100),
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
+                ),
+                Spacer(),
+                Container(
+                  margin: EdgeInsets.only(top: 16, right: 6),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/muttomran.png"),
+                              Container(
+                                margin: EdgeInsets.only(left: 100),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "Mutton Ran",
-                              style: TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            Text(
-                              "Form ₹ 475.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Mutton Ran",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Text(
+                            "Form ₹ 475.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 16, left: 10),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/chickenleg.png"),
-                                Container(
-                                  margin: EdgeInsets.only(left: 100),
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 16, left: 10),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/chickenleg.png"),
+                              Container(
+                                margin: EdgeInsets.only(left: 100),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "Chicken Leg",
-                              style: TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            Text(
-                              "Form ₹ 450.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Chicken Leg",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Text(
+                            "Form ₹ 450.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  Spacer(),
-                  Container(
-                    margin: EdgeInsets.only(top: 16, right: 6),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/freshmutton.png"),
-                                Container(
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
+                ),
+                Spacer(),
+                Container(
+                  margin: EdgeInsets.only(top: 16, right: 6),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/freshmutton.png"),
+                              Container(
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "Fresh Mutton",
-                              style: TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            Text(
-                              "Form ₹ 349.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Fresh Mutton",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Text(
+                            "Form ₹ 349.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 16, left: 10),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/eatmutton.png"),
-                                Container(
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 16, left: 10),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/eatmutton.png"),
+                              Container(
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "Eat Mutton Packaging Type",
-                              style: TextStyle(color: Colors.black, fontSize: 14),
-                            ),
-                            Text(
-                              "Form ₹ 349.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Eat Mutton Packaging Type",
+                            style: TextStyle(color: Colors.black, fontSize: 14),
+                          ),
+                          Text(
+                            "Form ₹ 349.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  Spacer(),
-                  Container(
-                    margin: EdgeInsets.only(top: 16, right: 6),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/freshchicken.png"),
-                                Container(
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
+                ),
+                Spacer(),
+                Container(
+                  margin: EdgeInsets.only(top: 16, right: 6),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/freshchicken.png"),
+                              Container(
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "Fresh Chicken Meat",
-                              style: TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            Text(
-                              "Form ₹ 349.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Fresh Chicken Meat",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Text(
+                            "Form ₹ 349.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 16, left: 10),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/freshmeat.png"),
-                                Container(
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 16, left: 10),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/freshmeat.png"),
+                              Container(
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "Mutton Mix Cut",
-                              style: TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            Text(
-                              "Form ₹ 349.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Mutton Mix Cut",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Text(
+                            "Form ₹ 349.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  Spacer(),
-                  Container(
-                    margin: EdgeInsets.only(top: 16, right: 6),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Stack(
-                              children: [
-                                Image.asset("assets/image/muttonbonless.png"),
-                                Container(
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isFavorite
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color:
-                                          isFavorite ? Colors.red : Colors.orange,
-                                    ),
+                ),
+                Spacer(),
+                Container(
+                  margin: EdgeInsets.only(top: 16, right: 6),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset("assets/image/muttonbonless.png"),
+                              Container(
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
+                                  child: Icon(
+                                    isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        isFavorite ? Colors.red : Colors.orange,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "Mutton Boneless",
-                              style: TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            Text(
-                              "Form ₹ 349.00",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 60),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Mutton Boneless",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                          ),
+                          Text(
+                            "Form ₹ 349.00",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 60),
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

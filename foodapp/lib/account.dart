@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/faqs.dart';
+import 'package:foodapp/privacy.dart';
 import 'package:foodapp/termsofuse.dart';
 
 class Account extends StatefulWidget {
@@ -47,39 +48,49 @@ class _AccountState extends State<Account> {
               ),
               child: Column(
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 50),
-                    width: 340,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(240, 240, 240, .95),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          child: Icon(
-                            Icons.person_pin_outlined,
-                            size: 20,
-                          ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Privacy(),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          child: Text(
-                            "Privacy Policy",
-                            style: TextStyle(fontSize: 16),
+                      );
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(top: 50),
+                      width: 340,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(240, 240, 240, .95),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: Icon(
+                              Icons.person_pin_outlined,
+                              size: 20,
+                            ),
                           ),
-                        ),
-                        Spacer(),
-                        Container(
-                          margin: EdgeInsets.only(right: 10),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
+                          Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: Text(
+                              "Privacy Policy",
+                              style: TextStyle(fontSize: 16),
+                            ),
                           ),
-                        ),
-                      ],
+                          Spacer(),
+                          Container(
+                            margin: EdgeInsets.only(right: 10),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 20,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   GestureDetector(
