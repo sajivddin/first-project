@@ -4,7 +4,7 @@ class Myportfolio extends StatefulWidget {
   const Myportfolio({super.key});
 
   @override
-  State<Myportfolio> createState() => _MyportfolioState();
+  State<Myportfolio> get createState => _MyportfolioState();
 }
 
 class _MyportfolioState extends State<Myportfolio> {

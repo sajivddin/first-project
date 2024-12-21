@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/ProfileScreen.dart';
 import 'package:foodapp/buynow.dart';
 
 class Cartscreen extends StatefulWidget {
@@ -261,9 +262,19 @@ class _CartscreenState extends State<Cartscreen> {
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 30,
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.account_circle_outlined,
+                size: 30,
+              ),
             ),
             label: "",
           ),

@@ -4,7 +4,7 @@ class Addfunds extends StatefulWidget {
   const Addfunds({super.key});
 
   @override
-  State<Addfunds> createState() => _AddfundsState();
+  State<Addfunds> get createState => _AddfundsState();
 }
 
 class _AddfundsState extends State<Addfunds> {

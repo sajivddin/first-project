@@ -4,7 +4,7 @@ class Frequently extends StatefulWidget {
   const Frequently({super.key});
 
   @override
-  State<Frequently> createState() => _FrequentlyState();
+  State<Frequently> get createState => _FrequentlyState();
 }
 
 class _FrequentlyState extends State<Frequently> {

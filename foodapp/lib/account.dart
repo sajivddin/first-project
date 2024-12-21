@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/ProfileScreen.dart';
 import 'package:foodapp/faqs.dart';
+import 'package:foodapp/loginscreen.dart';
 import 'package:foodapp/privacy.dart';
 import 'package:foodapp/termsofuse.dart';
 
@@ -155,11 +157,21 @@ class _AccountState extends State<Account> {
                             size: 20,
                           ),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          child: Text(
-                            "Login",
-                            style: TextStyle(fontSize: 16),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Loginscreen(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: Text(
+                              "Login",
+                              style: TextStyle(fontSize: 16),
+                            ),
                           ),
                         ),
                         Spacer(),
@@ -249,9 +261,19 @@ class _AccountState extends State<Account> {
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 30,
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.account_circle_outlined,
+                size: 30,
+              ),
             ),
             label: "",
           ),

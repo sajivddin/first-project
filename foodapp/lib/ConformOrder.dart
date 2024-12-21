@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/ProfileScreen.dart';
 
 import 'myorder.dart';
 
@@ -518,9 +519,19 @@ class _ConformOrderState extends State<ConformOrder> {
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 30,
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.account_circle_outlined,
+                size: 30,
+              ),
             ),
             label: "",
           ),

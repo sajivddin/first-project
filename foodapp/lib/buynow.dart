@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/ProfileScreen.dart';
 import 'package:foodapp/loginscreen.dart';
 
 class Buynow extends StatefulWidget {
@@ -407,9 +408,19 @@ class _BuynowState extends State<Buynow> {
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 30,
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.account_circle_outlined,
+                size: 30,
+              ),
             ),
             label: "",
           ),

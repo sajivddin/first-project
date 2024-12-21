@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/ConformOrder.dart';
+import 'package:foodapp/ProfileScreen.dart';
 
 class UploadProfile extends StatefulWidget {
   const UploadProfile({super.key});
@@ -204,9 +205,19 @@ class _UploadProfileState extends State<UploadProfile> {
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 30,
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.account_circle_outlined,
+                size: 30,
+              ),
             ),
             label: "",
           ),

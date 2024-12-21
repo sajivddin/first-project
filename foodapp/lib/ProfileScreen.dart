@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/touch.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -70,11 +71,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           Row(
             children: [
-              Container(
-                margin: EdgeInsets.only(left: 10),
-                child: CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage("assets/image/profileimage.png"),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Touch(),
+                    ),
+                  );
+                },
+                child: Container(
+                  margin: EdgeInsets.only(left: 10),
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundImage:
+                        AssetImage("assets/image/profileimage.png"),
+                  ),
                 ),
               ),
               SizedBox(width: 10),

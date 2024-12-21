@@ -4,7 +4,7 @@ class Currentplan extends StatefulWidget {
   const Currentplan({super.key});
 
   @override
-  State<Currentplan> createState() => _CurrentplanState();
+  State<Currentplan>get  createState => _CurrentplanState();
 }
 
 class _CurrentplanState extends State<Currentplan> {

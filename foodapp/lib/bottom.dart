@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/cartscreen.dart';
 
+import 'ProfileScreen.dart';
+
 class Bottom extends StatefulWidget {
   const Bottom({super.key});
 
@@ -122,33 +124,46 @@ class _BottomState extends State<Bottom> {
             ),
             Container(
               margin: EdgeInsets.only(top: 75, left: 10),
-              child: Row(children: [
-                Container(
-                  child: Image.asset("assets/image/chicken1.png"),
-                ),
-              ],),
+              child: Row(
+                children: [
+                  Container(
+                    child: Column(
+                      children: [
+                        Image.asset("assets/image/chicken1.png"),
+                        Text(
+                          "Chicken mix",
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 10),
+                    child: Column(
+                      children: [
+                        Image.asset("assets/image/chicken2.png"),
+                        Text(
+                          "Fresh mutton",
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 10),
+                    child: Column(
+                      children: [
+                        Image.asset("assets/image/fish.png"),
+                        Text(
+                          "Fish",
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-
-
-            // Container(
-            //   margin: EdgeInsets.only(top: 75, left: 10),
-            //   child: Row(
-            //     children: [
-            //       Image.asset("assets/image/chicken1.png"),
-            //       Container(
-            //         margin: EdgeInsets.only(left: 16),
-            //         child: Image.asset("assets/image/chicken2.png"),
-            //       ),
-            //       Container(
-            //         margin: EdgeInsets.only(left: 16),
-            //         child: Image.asset("assets/image/fish.png"),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-
-
-
             Container(
               margin: EdgeInsets.only(top: 65, left: 10),
               child: Row(
@@ -394,7 +409,7 @@ class _BottomState extends State<Bottom> {
                             children: [
                               Image.asset("assets/image/rawchicken.png"),
                               Container(
-                                margin: EdgeInsets.only(left: 100),
+                                margin: EdgeInsets.only(left: 130),
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -439,7 +454,7 @@ class _BottomState extends State<Bottom> {
                             children: [
                               Image.asset("assets/image/muttomran.png"),
                               Container(
-                                margin: EdgeInsets.only(left: 100),
+                                margin: EdgeInsets.only(left: 130),
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -487,7 +502,7 @@ class _BottomState extends State<Bottom> {
                             children: [
                               Image.asset("assets/image/chickenleg.png"),
                               Container(
-                                margin: EdgeInsets.only(left: 100),
+                                margin: EdgeInsets.only(left: 130),
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -532,6 +547,7 @@ class _BottomState extends State<Bottom> {
                             children: [
                               Image.asset("assets/image/freshmutton.png"),
                               Container(
+                                margin: EdgeInsets.only(left: 130),
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -579,6 +595,7 @@ class _BottomState extends State<Bottom> {
                             children: [
                               Image.asset("assets/image/eatmutton.png"),
                               Container(
+                                margin: EdgeInsets.only(left: 130),
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -623,6 +640,7 @@ class _BottomState extends State<Bottom> {
                             children: [
                               Image.asset("assets/image/freshchicken.png"),
                               Container(
+                                margin: EdgeInsets.only(left: 130),
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -670,6 +688,7 @@ class _BottomState extends State<Bottom> {
                             children: [
                               Image.asset("assets/image/freshmeat.png"),
                               Container(
+                                margin: EdgeInsets.only(left: 130),
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -714,6 +733,7 @@ class _BottomState extends State<Bottom> {
                             children: [
                               Image.asset("assets/image/muttonbonless.png"),
                               Container(
+                                margin: EdgeInsets.only(left: 130),
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -780,9 +800,19 @@ class _BottomState extends State<Bottom> {
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 30,
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.account_circle_outlined,
+                size: 30,
+              ),
             ),
             label: "",
           ),

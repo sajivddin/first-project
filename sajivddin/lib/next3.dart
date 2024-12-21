@@ -6,7 +6,7 @@ class Next3 extends StatefulWidget {
   const Next3({super.key});
 
   @override
-  State<Next3> createState() => _Next3State();
+  State<Next3> get createState => _Next3State();
 }
 
 class _Next3State extends State<Next3> {
