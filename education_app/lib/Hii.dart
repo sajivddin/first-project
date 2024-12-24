@@ -202,48 +202,70 @@ class _HiJunedState extends State<HiJuned> {
                 ],
               ),
               SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 58,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(232, 241, 255, 100),
-                      borderRadius: BorderRadius.circular(15),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 58,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(232, 241, 255, 100),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text("All"),
+                      ),
                     ),
-                    child: Center(
-                      child: Text("All"),
-                    ),
-                  ),
-                  Container(
-                    width: 110,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(0, 26, 78, 47),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Graphic Design",
-                        style: TextStyle(
-                          color: Colors.white,
+                    Container(
+                      margin: EdgeInsets.only(left: 5),
+                      width: 110,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(0, 26, 78, 47),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Graphic Design",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(232, 241, 255, 100),
-                      borderRadius: BorderRadius.circular(15),
+                    Container(
+                      margin: EdgeInsets.only(left: 5),
+                      width: 100,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(232, 241, 255, 100),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text("3D Design"),
+                      ),
                     ),
-                    child: Center(
-                      child: Text("3D Design"),
+                    Container(
+                      margin: EdgeInsets.only(left: 5),
+                      width: 130,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(232, 241, 255, 100),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Arts & Humanities",
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: 16),
               CourseCard(
@@ -251,6 +273,42 @@ class _HiJunedState extends State<HiJuned> {
                 price: "850/- |",
                 rating: "4.2 |",
                 students: "7830 Std",
+              ),
+              SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Top Mentor",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'See All >',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(0, 26, 78, 47),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MentorCard(name: "Jiya"),
+                    MentorCard(name: "Aman"),
+                    MentorCard(name: "Rahul.J"),
+                    MentorCard(name: "Manav"),
+                  ],
+                ),
               ),
             ],
           ),
@@ -519,6 +577,30 @@ class CourseCard extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class MentorCard extends StatelessWidget {
+  final String name;
+  const MentorCard({required this.name, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          margin: EdgeInsets.only(),
+          height: 70,
+          width: 80,
+          decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+        SizedBox(height: 4),
+        Text(name,style: TextStyle(fontSize: 18),),
+      ],
     );
   }
 }
