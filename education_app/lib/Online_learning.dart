@@ -1,4 +1,5 @@
 import 'package:education_app/LearnFromAny.dart';
+import 'package:education_app/lets.dart';
 import 'package:flutter/material.dart';
 
 class OnlineLearning extends StatefulWidget {
@@ -21,7 +22,14 @@ class _OnlineLearningState extends State<OnlineLearning> {
             child: Align(
               alignment: Alignment.topRight,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Lets(),
+                    ),
+                  );
+                },
                 child: Container(
                   margin: EdgeInsets.only(top: 20),
                   child: Text(

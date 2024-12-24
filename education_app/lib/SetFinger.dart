@@ -1,3 +1,4 @@
+import 'package:education_app/Hii.dart';
 import 'package:flutter/material.dart';
 
 class SetFinger extends StatefulWidget {
@@ -57,6 +58,17 @@ class _SetFingerState extends State<SetFinger> {
                         top: 50,
                         child: GestureDetector(
                           onTap: () {
+                            Future.delayed(
+                              Duration(seconds: 3),
+                              () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HiJuned(),
+                                  ),
+                                );
+                              },
+                            );
                             showDialog(
                               context: context,
                               builder: (context) {
@@ -166,13 +178,18 @@ class _SetFingerState extends State<SetFinger> {
                           width: 2,
                         ),
                       ),
-                      child: Center(
-                        child: Text(
-                          "Skip",
-                          style: TextStyle(
-                              color: Color.fromRGBO(0, 26, 67, 100),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Center(
+                          child: Text(
+                            "Skip",
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 26, 67, 100),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
                         ),
                       ),
                     ),

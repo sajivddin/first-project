@@ -1,3 +1,4 @@
+import 'package:education_app/lets.dart';
 import 'package:flutter/material.dart';
 
 import 'GetOnline.dart';
@@ -22,13 +23,23 @@ class _LearnFromAnyState extends State<LearnFromAny> {
             padding: EdgeInsets.all(16.0),
             child: Align(
               alignment: Alignment.topRight,
-              child: Container(
-                margin: EdgeInsets.only(top: 20),
-                child: Text(
-                  "Skip",
-                  style: TextStyle(
-                    color: Color.fromRGBO(26, 67, 78, 47),
-                    fontSize: 20,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Lets(),
+                    ),
+                  );
+                },
+                child: Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: Text(
+                    "Skip",
+                    style: TextStyle(
+                      color: Color.fromRGBO(26, 67, 78, 47),
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),

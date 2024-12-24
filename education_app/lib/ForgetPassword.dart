@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'VerifyForgetPassword.dart';
+
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({super.key});
 
@@ -145,38 +147,48 @@ class _ForgetPassword extends State<ForgetPassword> {
                 ],
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 40),
-              width: 350,
-              height: 60,
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(0, 26, 78, 47),
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 120),
-                    child: Text(
-                      "Continue",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                    ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => VerifyForgetPassword(),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(left: 80),
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
+                );
+              },
+              child: Container(
+                margin: EdgeInsets.only(top: 40),
+                width: 350,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(0, 26, 78, 47),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 120),
+                      child: Text(
+                        "Continue",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
                     ),
-                    child: Icon(
-                      Icons.arrow_forward,
-                      size: 25,
-                      color: Color.fromRGBO(0, 26, 78, 47),
+                    Container(
+                      margin: EdgeInsets.only(left: 80),
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.arrow_forward,
+                        size: 25,
+                        color: Color.fromRGBO(0, 26, 78, 47),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
