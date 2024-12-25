@@ -1,4 +1,8 @@
+import 'package:education_app/AllCategoary.dart';
 import 'package:flutter/material.dart';
+
+import 'Metro.dart';
+import 'PopularCourse.dart';
 
 class HiJuned extends StatefulWidget {
   const HiJuned({super.key});
@@ -71,7 +75,25 @@ class _HiJunedState extends State<HiJuned> {
                   hintText: 'Search for..',
                   hintStyle: TextStyle(color: Colors.grey),
                   prefixIcon: Icon(Icons.search, color: Colors.black),
-                  suffixIcon: Icon(Icons.tune, color: Colors.blue),
+                  suffixIcon: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AllCategory(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 35,
+                      height: 35,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color.fromRGBO(0, 26, 67, 47),
+                      ),
+                      child: Icon(Icons.tune, color: Colors.white),
+                    ),
+                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide.none,
@@ -189,7 +211,14 @@ class _HiJunedState extends State<HiJuned> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PopularCourse(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       'See All >',
                       style: TextStyle(
@@ -286,7 +315,14 @@ class _HiJunedState extends State<HiJuned> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Metro(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       'See All >',
                       style: TextStyle(
@@ -599,7 +635,10 @@ class MentorCard extends StatelessWidget {
           ),
         ),
         SizedBox(height: 4),
-        Text(name,style: TextStyle(fontSize: 18),),
+        Text(
+          name,
+          style: TextStyle(fontSize: 18),
+        ),
       ],
     );
   }
