@@ -125,7 +125,7 @@ class AllCategory extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 50, left: 20, right: 20),
+              margin: EdgeInsets.only(top: 50, left: 10, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

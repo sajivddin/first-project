@@ -1,8 +1,10 @@
 import 'package:education_app/AllCategoary.dart';
+import 'package:education_app/onlinecourse.dart';
 import 'package:flutter/material.dart';
 
 import 'Metro.dart';
 import 'PopularCourse.dart';
+import 'filter.dart';
 
 class HiJuned extends StatefulWidget {
   const HiJuned({super.key});
@@ -69,6 +71,23 @@ class _HiJunedState extends State<HiJuned> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextField(
+                onChanged: (value) {
+                  if (value.toLowerCase() == 'online course') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => OnlineCourse(),
+                      ),
+                    );
+                  } else if (value.toLowerCase() == 'filter') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Filter(),
+                      ),
+                    );
+                  }
+                },
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.grey[200],
