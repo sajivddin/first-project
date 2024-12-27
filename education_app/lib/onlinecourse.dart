@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Mentors.dart';
+import 'Video.dart';
 
 class OnlineCourse extends StatefulWidget {
   const OnlineCourse({super.key});
@@ -151,19 +152,29 @@ class _OnlineCourseState extends State<OnlineCourse> {
             ),
             SizedBox(height: 20),
             Expanded(
-              child: ListView(
-                children: [
-                  buildCourseCard('Graphic Design', 'Graphic Design Advanced',
-                      '7058/-', 4.2, 7830),
-                  buildCourseCard('Graphic Design', 'Advertisement Design',
-                      '800/-', 3.9, 12680),
-                  buildCourseCard('Programming', 'Graphic Design Advanced',
-                      '599/-', 4.2, 990),
-                  buildCourseCard('Web Development', 'Web Developer Concepts',
-                      '499/-', 4.9, 14580),
-                  buildCourseCard('SEO & Marketing', 'Digital Marketing Course',
-                      '1500/-', 4.8, 12340),
-                ],
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Video(),
+                    ),
+                  );
+                },
+                child: ListView(
+                  children: [
+                    buildCourseCard('Graphic Design', 'Graphic Design Advanced',
+                        '7058/-', 4.2, 7830),
+                    buildCourseCard('Graphic Design', 'Advertisement Design',
+                        '800/-', 3.9, 12680),
+                    buildCourseCard('Programming', 'Graphic Design Advanced',
+                        '599/-', 4.2, 990),
+                    buildCourseCard('Web Development', 'Web Developer Concepts',
+                        '499/-', 4.9, 14580),
+                    buildCourseCard('SEO & Marketing',
+                        'Digital Marketing Course', '1500/-', 4.8, 12340),
+                  ],
+                ),
               ),
             ),
           ],
