@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'MyBookMark.dart';
+
 class Mentors extends StatefulWidget {
   const Mentors({super.key});
 
@@ -159,51 +161,57 @@ class _MentorsState extends State<Mentors> {
             ),
             SizedBox(height: 20),
             Expanded(
-              child: ListView.builder(
-                itemCount: myList.length,
-                itemBuilder: (context, index) {
-                  return Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 10),
-                        width: 66,
-                        height: 66,
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                      Divider(
-                        color: Colors.blue,
-                        thickness: 2,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              myList[index]["title"].toString(),
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                                color: Color.fromRGBO(32, 34, 68, 100),
-                              ),
-                            ),
-                            Text(
-                              myList[index]["subtitle"].toString(),
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromRGBO(84, 84, 84, 100),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MyBookMark(),
+                    ),
                   );
                 },
+                child: ListView.builder(
+                  itemCount: myList.length,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          width: 66,
+                          height: 66,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                myList[index]["title"].toString(),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Color.fromRGBO(32, 34, 68, 100),
+                                ),
+                              ),
+                              Text(
+                                myList[index]["subtitle"].toString(),
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(84, 84, 84, 100),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
               ),
             ),
           ],
