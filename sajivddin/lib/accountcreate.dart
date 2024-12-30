@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sajivddin/start.dart';
 
-class createaccount extends StatefulWidget {
-  const createaccount({super.key});
+class Accountcreate extends StatefulWidget {
+  const Accountcreate({super.key});
 
   @override
-  State<createaccount> get createState => _createaccountState();
+  State<Accountcreate> get createState => _AccountcreateState();
 }
 
-class _createaccountState extends State<createaccount> {
+class _AccountcreateState extends State<Accountcreate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
