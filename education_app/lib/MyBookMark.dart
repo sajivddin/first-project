@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Remove.dart';
+
 class MyBookMark extends StatefulWidget {
   const MyBookMark({super.key});
 
@@ -91,19 +93,29 @@ class _MyBookMarkState extends State<MyBookMark> {
           ),
           SizedBox(height: 25),
           Expanded(
-            child: ListView(
-              children: [
-                buildCourseCard('Graphic Design', 'Graphic Design Advanced',
-                    '799/-', 4.2, 7830),
-                buildCourseCard('Graphic Design', 'Advertisement Design',
-                    '499/-', 3.9, 12680),
-                buildCourseCard('Programming', 'Graphic Design Advanced',
-                    '199/-', 4.2, 990),
-                buildCourseCard('Web Development', 'Web Developer conce..',
-                    '899/-', 4.9, 14580),
-                buildCourseCard('SEO & Marketing', 'Digital Marketing Caree..',
-                    '299/-', 4.8, 10252),
-              ],
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Remove(),
+                  ),
+                );
+              },
+              child: ListView(
+                children: [
+                  buildCourseCard('Graphic Design', 'Graphic Design Advanced',
+                      '799/-', 4.2, 7830),
+                  buildCourseCard('Graphic Design', 'Advertisement Design',
+                      '499/-', 3.9, 12680),
+                  buildCourseCard('Programming', 'Graphic Design Advanced',
+                      '199/-', 4.2, 990),
+                  buildCourseCard('Web Development', 'Web Developer conce..',
+                      '899/-', 4.9, 14580),
+                  buildCourseCard('SEO & Marketing',
+                      'Digital Marketing Caree..', '299/-', 4.8, 10252),
+                ],
+              ),
             ),
           ),
         ],

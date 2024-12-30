@@ -1,4 +1,5 @@
 import 'package:education_app/AllCategoary.dart';
+import 'package:education_app/Notifications.dart';
 import 'package:education_app/onlinecourse.dart';
 import 'package:flutter/material.dart';
 
@@ -47,18 +48,28 @@ class _HiJunedState extends State<HiJuned> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
-            child: Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: Color.fromRGBO(22, 127, 113, 100),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Notifications(),
+                  ),
+                );
+              },
+              child: Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Color.fromRGBO(22, 127, 113, 100),
+                  ),
                 ),
-              ),
-              child: Icon(
-                Icons.notifications_none,
-                color: Colors.green,
+                child: Icon(
+                  Icons.notifications_none,
+                  color: Colors.green,
+                ),
               ),
             ),
           ),

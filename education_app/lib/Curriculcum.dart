@@ -32,7 +32,7 @@ class Curriculcum extends StatelessWidget {
                       size: 45,
                     ),
                   ),
-                )
+                ),
               ],
             ),
             Container(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'MaryJohn.dart';
 import 'Mentors.dart';
 import 'Video.dart';
 
@@ -202,7 +203,16 @@ class _OnlineCourseState extends State<OnlineCourse> {
             label: "Transaction",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            icon: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MaryJohn(),
+                    ),
+                  );
+                },
+                child: Icon(Icons.account_circle)),
             label: "Profile",
           ),
         ],
