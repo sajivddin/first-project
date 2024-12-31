@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Christopher.dart';
+
 class MaryJohn extends StatefulWidget {
   const MaryJohn({super.key});
 
@@ -9,7 +11,7 @@ class MaryJohn extends StatefulWidget {
 
 class _MaryJohnState extends State<MaryJohn> {
   bool isFollowing = false;
-  int Default = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,8 +30,6 @@ class _MaryJohnState extends State<MaryJohn> {
                   color: Colors.black,
                   shape: BoxShape.circle,
                 ),
-                // radius: 50,
-                // backgroundColor: Colors.black,
               ),
             ),
             SizedBox(height: 10),
@@ -168,18 +168,28 @@ class _MaryJohnState extends State<MaryJohn> {
                       ),
                     ),
                   ),
-                  Container(
-                    width: 180,
-                    height: 52,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(245, 249, 255, 100),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Ratings",
-                        style: TextStyle(
-                          color: Color.fromRGBO(0, 26, 67, 47),
-                          fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Christopher(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 180,
+                      height: 52,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(245, 249, 255, 100),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Ratings",
+                          style: TextStyle(
+                            color: Color.fromRGBO(0, 26, 67, 47),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),

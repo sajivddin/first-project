@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'VideoSave.dart';
+
 class Curriculcum extends StatelessWidget {
   const Curriculcum({super.key});
 
@@ -340,42 +342,52 @@ class Curriculcum extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Center(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 30),
-                      width: 350,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Color.fromRGBO(26, 67, 78, 47),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(left: 80),
-                            child: Text(
-                              "Enroll Course - 499/-",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => VideoSave(),
+                        ),
+                      );
+                    },
+                    child: Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 30),
+                        width: 350,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Color.fromRGBO(26, 67, 78, 47),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 80),
+                              child: Text(
+                                "Enroll Course - 499/-",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 30),
-                            width: 48,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
+                            Container(
+                              margin: EdgeInsets.only(left: 30),
+                              width: 48,
+                              height: 48,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.arrow_forward,
+                                color: Color.fromRGBO(26, 67, 78, 47),
+                              ),
                             ),
-                            child: Icon(
-                              Icons.arrow_forward,
-                              color: Color.fromRGBO(26, 67, 78, 47),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

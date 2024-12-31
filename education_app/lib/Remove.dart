@@ -175,20 +175,25 @@ class _RemoveState extends State<Remove> {
                 margin: EdgeInsets.only(top: 30),
                 child: Row(
                   children: [
-                    Container(
-                      width: 140,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        color: Color.fromRGBO(232, 241, 255, 100),
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(),
-                      ),
-                      child: Center(
-                        child: Text(
-                          " Cancel",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                    InkWell(
+                      onTap:(){
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        width: 140,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Color.fromRGBO(232, 241, 255, 100),
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(),
+                        ),
+                        child: Center(
+                          child: Text(
+                            " Cancel",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
