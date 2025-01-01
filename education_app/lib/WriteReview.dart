@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import 'PaymentMethod.dart';
+
 class WriteReview extends StatefulWidget {
   const WriteReview({super.key});
 
@@ -11,17 +13,17 @@ class WriteReview extends StatefulWidget {
 }
 
 class _WriteReviewState extends State<WriteReview> {
-  // File? _selectedImage;
-  // final ImagePicker _picker = ImagePicker();
-  //
-  // Future<void> _pickImageFromGallery() async {
-  //   final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
-  //   if (pickedFile != null) {
-  //     setState(() {
-  //       _selectedImage = File(pickedFile.path);
-  //     });
-  //   }
-  // }
+  File? _selectedImage;
+  final ImagePicker _picker = ImagePicker();
+
+  Future<void> _pickImageFromGallery() async {
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        _selectedImage = File(pickedFile.path);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,14 +110,17 @@ class _WriteReviewState extends State<WriteReview> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset("assets/image/wheather.png"),
-                    Container(
-                      margin: EdgeInsets.only(top: 10),
-                      child: Text(
-                        "Click here to Upload",
-                        style: TextStyle(
-                          color: Color.fromRGBO(32, 34, 64, 47),
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: _pickImageFromGallery,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 10),
+                        child: Text(
+                          "Click here to Upload",
+                          style: TextStyle(
+                            color: Color.fromRGBO(32, 34, 64, 47),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
@@ -134,16 +139,65 @@ class _WriteReviewState extends State<WriteReview> {
               ),
             ),
             Card(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                child: TextField(
-                  maxLength: 5,
-                  decoration: InputDecoration(
-                    hintText: "Would you like to write anything about this Product?",
-                    border: UnderlineInputBorder(
-                      borderSide: BorderSide.none,
-                    ),
+              child: TextField(
+                maxLines: 8,
+                decoration: InputDecoration(
+                  hintText:
+                      "Would you like to write anything about this Product?",
+                  hintStyle: TextStyle(
+                    color: Color.fromRGBO(180, 189, 196, 100),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
                   ),
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                  alignLabelWithHint: true,
+                ),
+              ),
+            ),
+            SizedBox(height: 50),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PaymentMethod(),
+                  ),
+                );
+              },
+              child: Container(
+                margin: EdgeInsets.only(top: 20),
+                width: 350,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(0, 26, 67, 47),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 80),
+                      child: Text(
+                        "Submit Review",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 60),
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                      ),
+                      child: Icon(Icons.arrow_forward),
+                    ),
+                  ],
                 ),
               ),
             ),
