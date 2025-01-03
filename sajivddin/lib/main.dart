@@ -39,7 +39,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> get createState => _MyHomePageState();
+  State<MyHomePage>  createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {

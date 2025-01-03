@@ -4,7 +4,7 @@ class Lastpage extends StatefulWidget {
   const Lastpage({super.key});
 
   @override
-  State<Lastpage> get createState => _LastpageState();
+  State<Lastpage>  createState() => _LastpageState();
 }
 
 class _LastpageState extends State<Lastpage> {

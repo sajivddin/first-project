@@ -5,7 +5,7 @@ class Next4 extends StatefulWidget {
   const Next4({super.key});
 
   @override
-  State<Next4> get createState => _Next4State();
+  State<Next4>  createState() => _Next4State();
 }
 
 class _Next4State extends State<Next4> {

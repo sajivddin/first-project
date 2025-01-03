@@ -5,7 +5,7 @@ class Start extends StatefulWidget {
   const Start({super.key});
 
   @override
-  State<Start> get createState => _StartState();
+  State<Start>  createState() => _StartState();
 }
 
 class _StartState extends State<Start> {

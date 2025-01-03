@@ -4,7 +4,7 @@ class Performance extends StatefulWidget {
   const Performance({super.key});
 
   @override
-  State<Performance> get createState => _PerformanceState();
+  State<Performance>  createState() => _PerformanceState();
 }
 
 class _PerformanceState extends State<Performance> {
