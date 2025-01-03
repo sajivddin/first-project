@@ -6,7 +6,7 @@ class OnlineLearning extends StatefulWidget {
   const OnlineLearning({super.key});
 
   @override
-  State<OnlineLearning> get createState => _OnlineLearningState();
+  State<OnlineLearning>  createState() => _OnlineLearningState();
 }
 
 class _OnlineLearningState extends State<OnlineLearning> {

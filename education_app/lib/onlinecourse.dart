@@ -8,7 +8,7 @@ class OnlineCourse extends StatefulWidget {
   const OnlineCourse({super.key});
 
   @override
-  State<OnlineCourse> get createState => _OnlineCourseState();
+  State<OnlineCourse>  createState() => _OnlineCourseState();
 }
 
 class _OnlineCourseState extends State<OnlineCourse> {

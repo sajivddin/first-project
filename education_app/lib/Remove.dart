@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Remove extends StatefulWidget {
   @override
-  _RemoveState get createState => _RemoveState();
+  _RemoveState  createState() => _RemoveState();
 }
 
 class _RemoveState extends State<Remove> {

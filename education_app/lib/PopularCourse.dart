@@ -4,7 +4,7 @@ class PopularCourse extends StatefulWidget {
   const PopularCourse({super.key});
 
   @override
-  State<PopularCourse> get createState => _PopularCourseState();
+  State<PopularCourse>  createState() => _PopularCourseState();
 }
 
 class _PopularCourseState extends State<PopularCourse> {

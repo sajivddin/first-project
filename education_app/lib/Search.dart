@@ -4,7 +4,7 @@ class Search extends StatefulWidget {
   const Search({super.key});
 
   @override
-  State<Search> get createState => _SearchState();
+  State<Search>  createState() => _SearchState();
 }
 
 class _SearchState extends State<Search> {

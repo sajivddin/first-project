@@ -5,7 +5,7 @@ class GetOnline extends StatefulWidget {
   const GetOnline({super.key});
 
   @override
-  State<GetOnline> get createState => _GetOnlineState();
+  State<GetOnline>  createState() => _GetOnlineState();
 }
 
 class _GetOnlineState extends State<GetOnline> {

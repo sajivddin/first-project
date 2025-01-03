@@ -4,7 +4,7 @@ class PaymentMethod extends StatefulWidget {
   const PaymentMethod({super.key});
 
   @override
-  State<PaymentMethod> get createState => _PaymentMethodState();
+  State<PaymentMethod>  createState() => _PaymentMethodState();
 }
 
 class _PaymentMethodState extends State<PaymentMethod> {

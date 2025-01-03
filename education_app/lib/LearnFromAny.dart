@@ -7,7 +7,7 @@ class LearnFromAny extends StatefulWidget {
   const LearnFromAny({super.key});
 
   @override
-  State<LearnFromAny> get createState => _LearnFromAnyState();
+  State<LearnFromAny>  createState() => _LearnFromAnyState();
 }
 
 class _LearnFromAnyState extends State<LearnFromAny> {

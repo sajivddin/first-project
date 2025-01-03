@@ -6,7 +6,7 @@ class GettingStarted extends StatefulWidget {
   const GettingStarted({super.key});
 
   @override
-  State<GettingStarted> get createState => _GettingStarted();
+  State<GettingStarted>  createState() => _GettingStarted();
 }
 
 class _GettingStarted extends State<GettingStarted> {

@@ -6,7 +6,7 @@ class CreatePin extends StatefulWidget {
   const CreatePin({super.key});
 
   @override
-  State<CreatePin> get createState => _CreatePinState();
+  State<CreatePin>  createState() => _CreatePinState();
 }
 
 class _CreatePinState extends State<CreatePin> {

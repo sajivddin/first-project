@@ -9,7 +9,7 @@ class WriteReview extends StatefulWidget {
   const WriteReview({super.key});
 
   @override
-  State<WriteReview> get createState => _WriteReviewState();
+  State<WriteReview> createState() => _WriteReviewState();
 }
 
 class _WriteReviewState extends State<WriteReview> {

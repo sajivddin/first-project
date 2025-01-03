@@ -11,7 +11,7 @@ class HiJuned extends StatefulWidget {
   const HiJuned({super.key});
 
   @override
-  State<HiJuned> get createState => _HiJunedState();
+  State<HiJuned>  createState() => _HiJunedState();
 }
 
 class _HiJunedState extends State<HiJuned> {

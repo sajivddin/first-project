@@ -4,7 +4,7 @@ class Metro extends StatefulWidget {
   const Metro({super.key});
 
   @override
-  State<Metro> get createState => _MetroState();
+  State<Metro>  createState() => _MetroState();
 }
 
 class _MetroState extends State<Metro> {

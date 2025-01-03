@@ -5,7 +5,7 @@ class SetFinger extends StatefulWidget {
   const SetFinger({super.key});
 
   @override
-  State<SetFinger> get createState => _SetFingerState();
+  State<SetFinger>  createState() => _SetFingerState();
 }
 
 class _SetFingerState extends State<SetFinger> {

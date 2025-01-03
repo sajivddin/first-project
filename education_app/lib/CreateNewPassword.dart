@@ -5,7 +5,7 @@ class CreateNewPassword extends StatefulWidget {
   const CreateNewPassword({super.key});
 
   @override
-  State<CreateNewPassword> get createState => _CreateNewPasswordState();
+  State<CreateNewPassword>  createState() => _CreateNewPasswordState();
 }
 
 class _CreateNewPasswordState extends State<CreateNewPassword> {

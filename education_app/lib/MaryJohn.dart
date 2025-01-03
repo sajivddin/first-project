@@ -6,7 +6,7 @@ class MaryJohn extends StatefulWidget {
   const MaryJohn({super.key});
 
   @override
-  State<MaryJohn> get createState => _MaryJohnState();
+  State<MaryJohn>  createState() => _MaryJohnState();
 }
 
 class _MaryJohnState extends State<MaryJohn> {
