@@ -7,7 +7,7 @@ class Bottom extends StatefulWidget {
   const Bottom({super.key});
 
   @override
-  State<Bottom> get createState => _BottomState();
+  State<Bottom> createState() => _BottomState();
 }
 
 class _BottomState extends State<Bottom> {

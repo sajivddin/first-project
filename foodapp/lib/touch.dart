@@ -5,7 +5,7 @@ class Touch extends StatefulWidget {
   const Touch({super.key});
 
   @override
-  State<Touch> get createState => _TouchState();
+  State<Touch>  createState() => _TouchState();
 }
 
 class _TouchState extends State<Touch> {

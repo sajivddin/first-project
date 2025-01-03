@@ -5,7 +5,7 @@ class Area extends StatefulWidget {
   const Area({super.key});
 
   @override
-  State<Area> get createState => _AreaState();
+  State<Area>  createState() => _AreaState();
 }
 
 class _AreaState extends State<Area> {

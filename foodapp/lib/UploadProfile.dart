@@ -6,7 +6,7 @@ class UploadProfile extends StatefulWidget {
   const UploadProfile({super.key});
 
   @override
-  State<UploadProfile> get createState => _UploadProfileState();
+  State<UploadProfile>  createState() => _UploadProfileState();
 }
 
 class _UploadProfileState extends State<UploadProfile> {

@@ -4,7 +4,7 @@ class Faqs extends StatefulWidget {
   const Faqs({super.key});
 
   @override
-  State<Faqs> get createState => _FaqsState();
+  State<Faqs>  createState() => _FaqsState();
 }
 
 class _FaqsState extends State<Faqs> {
