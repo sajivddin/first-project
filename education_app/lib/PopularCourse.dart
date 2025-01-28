@@ -4,11 +4,12 @@ class PopularCourse extends StatefulWidget {
   const PopularCourse({super.key});
 
   @override
-  State<PopularCourse>  createState() => _PopularCourseState();
+  State<PopularCourse> createState() => _PopularCourseState();
 }
 
 class _PopularCourseState extends State<PopularCourse> {
   IconData bookmarkIcon = Icons.bookmark_border;
+  int selectIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -42,59 +43,109 @@ class _PopularCourseState extends State<PopularCourse> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: 58,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(232, 241, 255, 100),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text("All"),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 5),
-                    width: 110,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(0, 26, 78, 47),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Graphic Design",
-                        style: TextStyle(
-                          color: Colors.white,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectIndex = 0;
+                      });
+                    },
+                    child: Container(
+                      width: 58,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: selectIndex == 0
+                            ? Color.fromARGB(255, 26, 67, 86)
+                            : Color.fromRGBO(232, 241, 255, 100),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "All",
+                          style: TextStyle(
+                            color:
+                                selectIndex == 0 ? Colors.white : Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(left: 5),
-                    width: 100,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(232, 241, 255, 100),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text("3D Design"),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectIndex = 1;
+                      });
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(left: 5),
+                      width: 110,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: selectIndex == 1
+                            ? Color.fromARGB(255, 26, 67, 86)
+                            : Color.fromRGBO(232, 241, 255, 100),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Graphic Design",
+                          style: TextStyle(
+                            color:
+                                selectIndex == 1 ? Colors.white : Colors.black,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(left: 5),
-                    width: 130,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(232, 241, 255, 100),
-                      borderRadius: BorderRadius.circular(15),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectIndex = 2;
+                      });
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(left: 5),
+                      width: 100,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: selectIndex == 2
+                            ? Color.fromARGB(255, 26, 67, 86)
+                            : Color.fromRGBO(232, 241, 255, 100),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "3D Design",
+                          style: TextStyle(
+                            color:
+                                selectIndex == 2 ? Colors.white : Colors.black,
+                          ),
+                        ),
+                      ),
                     ),
-                    child: Center(
-                      child: Text(
-                        "Arts & Humanities",
-                        style: TextStyle(
-                          color: Colors.black,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectIndex = 3;
+                      });
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(left: 5),
+                      width: 130,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: selectIndex == 3
+                            ? Color.fromARGB(255, 26, 67, 86)
+                            : Color.fromRGBO(232, 241, 255, 100),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Arts & Humanities",
+                          style: TextStyle(
+                            color:
+                                selectIndex == 3 ? Colors.white : Colors.black,
+                          ),
                         ),
                       ),
                     ),
